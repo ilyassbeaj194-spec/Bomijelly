@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bomijelly – Informática, Redes y Soporte Técnico en Madrid</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #0d1b2a;
+            color: #fff;
+        }
+        header {
+            background: #1b263b;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        header img {
+            height: 60px;
+        }
+        nav a {
+            margin-right: 20px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #ff5f6d, #ffc371);
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+        .hero p {
+            font-size: 1.3rem;
+        }
+        .section {
+            padding: 50px 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .service-box {
+            background: #1b263b;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .kits {
+            background: #16243a;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .kit {
+            border: 1px solid #333;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            background: #1b263b;
+        }
+        .kit h3 {
+            margin-top: 0;
+        }
+
+        /* BOTÓN ESTÉTICO + ANIMACIÓN */
+        .btn-enviar {
+            background: #ff5f6d;           /* color principal */
+            border: none;
+            padding: 12px 22px;            /* tamaño */
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.2s ease-in-out; /* animación suave */
+        }
+
+        .btn-enviar:hover {
+            background: #ff4b5a;          /* color hover */
+            transform: scale(1.03);       /* ligero aumento */
+        }
+
+        .btn-enviar:active {
+            transform: scale(0.97);       /* efecto hundido */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            background: #1b263b;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="BOM.png" alt="Logo Bomijelly">
+    <nav>
+        <a href="#servicios">Servicios</a>
+        <a href="#kits">Kits & Precios</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>Bomijelly</h1>
+    <p>Tus necesidades son nuestra preocupaciones</p>
+</section>
+
+<section class="section" id="servicios">
+    <h2>Servicios</h2>
+    <div class="services">
+        <div class="service-box">
+            <h3>Reparación de equipos</h3>
+            <p>Mantenimiento, limpieza y reparación de ordenadores y servidores.</p>
+        </div>
+        <div class="service-box">
+            <h3>Redes y cableado</h3>
+            <p>Instalación, configuración y optimización de redes empresariales.</p>
+        </div>
+        <div class="service-box">
+            <h3>Soporte técnico</h3>
+            <p>Atención remota o presencial para incidencias informáticas.</p>
+        </div>
+        <div class="service-box">
+            <h3>Instalaciones a empresas</h3>
+            <p>Montaje de redes, PCs o servidores en empresa/oficina.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section kits" id="kits">
+    <h2>Kits de Ofertas y Precios Estimados</h2>
+    <p>Elige el plan que mejor se adapte a tu empresa. Todos los kits incluyen instalación profesional y soporte técnico inicial.</p>
+
+    <!-- KIT SOPORTE MENSUAL -->
+    <div class="kit">
+        <h3>Plan de Mantenimiento y Soporte Mensual</h3>
+        <p>Perfecto para empresas que quieren despreocuparse del mantenimiento informático.</p>
+        <ul>
+            <li>Soporte técnico ilimitado (remoto y presencial)</li>
+            <li>Mantenimiento preventivo y actualizaciones</li>
+            <li>Supervisión de la red y seguridad</li>
+        </ul>
+        <p class="precio"><em>Precio según infraestructura</em></p>
+
+        <!-- BOTÓN PARA ABRIR FORMULARIO -->
+        <button id="btnPresupuesto" class="btn-enviar">
+            Haz click aquí para enviar presupuesto
+        </button>
+
+        <!-- FORMULARIO -->
+        <div id="formPresupuesto" style="display:none; margin-top:20px;">
+            <label><strong>Nombre:</strong></label><br>
+            <input id="nombreUser" type="text" placeholder="Tu nombre" style="width:100%; padding:10px; margin:8px 0;"><br>
+
+            <label><strong>Descripción de tu necesidad:</strong></label><br>
+            <textarea id="textoUser" placeholder="Escribe aquí tu solicitud..."
+                style="width:100%; height:120px; padding:10px; margin:8px 0;"></textarea><br>
+
+            <button class="btn-enviar" onclick="enviarCorreo()">Enviar solicitud</button>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="contacto">
+    <h2>Contacto</h2>
+    <p><strong>Dirección:</strong> Madrid, España</p>
+    <p><strong>Email:</strong> contacto@bomijelly.com</p>
+    <p><strong>Teléfono:</strong> +34 600 000 000</p>
+</section>
+
+<footer>
+    © 2025 Bomijelly – Soluciones Informáticas y Redes en Madrid
+</footer>
+
+<!-- SCRIPT -->
+<script>
+document.getElementById('btnPresupuesto').addEventListener('click', function() {
+    const form = document.getElementById('formPresupuesto');
+    form.style.display = (form.style.display === "none") ? "block" : "none";
+});
+
+function enviarCorreo() {
+    let nombre = document.getElementById('nombreUser').value;
+    let texto = document.getElementById('textoUser').value;
+
+    let correoDestino = "ibea170@g.educaand.es";
+    let asunto = encodeURIComponent("Solicitud de presupuesto - Bomijelly");
+    let cuerpo = encodeURIComponent(
+        "Nombre: " + nombre + "\n\n" +
+        "Solicitud:\n" + texto
+    );
+
+    // Abre Gmail con mensaje listo para enviar
+    window.location.href =
+        "https://mail.google.com/mail/?view=cm&fs=1" +
+        "&to=" + correoDestino +
+        "&su=" + asunto +
+        "&body=" + cuerpo;
+}
+</script>
+
+</body>
+</html>
